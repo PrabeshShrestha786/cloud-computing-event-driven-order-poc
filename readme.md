@@ -1,141 +1,369 @@
-You’re right 👍 — thanks for catching that. The **producer.py was from the earlier Event Hub exercise**, not this project. Your current project uses **HTTP + Azure Function**, not a Python producer.
-
-Your actual flow is this:
-
-```
-Client (HTTP request)
-        ↓
-submitOrder Azure Function (HTTP Trigger)
-        ↓
-Service Bus Queue
-        ↓
-processOrder Azure Function (Queue Trigger)
-        ↓
-Cosmos DB
-```
-
-So here is the **correct short workflow to run your project again**.
+Below is a **complete setup guide one can follow** (even if nothing installed).
 
 ---
 
-# 🚀 Run the Project Again (Correct Steps)
+# Team Setup Guide
+**Stack:** Terraform + Azure Functions + Service Bus + Cosmos DB
 
-## 1️⃣ Recreate Azure infrastructure
+---
 
-From the **infra folder**:
+# 1️⃣ Make sure you have enough credit in your Azure Student Account
+1. Go to
+   [https://azure.microsoft.com/free/students/](https://azure.microsoft.com/free/students/)
+---
+
+# 2️⃣ Install Required Software
+
+All teammates must install the following.
+
+## Install Git
+
+Download:
+
+[https://git-scm.com/downloads](https://git-scm.com/downloads)
+
+Verify:
+
+```bash
+git --version
+```
+
+---
+
+## Install Node.js
+
+Download **LTS version**
+
+[https://nodejs.org](https://nodejs.org)
+
+Verify:
+
+```bash
+node -v
+npm -v
+```
+
+---
+
+## Install Azure CLI
+
+Download:
+
+[https://learn.microsoft.com/en-us/cli/azure/install-azure-cli](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli)
+
+Verify:
+
+```bash
+az version
+```
+
+---
+
+## Install Terraform
+
+Download:
+
+[https://developer.hashicorp.com/terraform/downloads](https://developer.hashicorp.com/terraform/downloads)
+
+Verify:
+
+```bash
+terraform -version
+```
+
+---
+
+## Install Azure Functions Core Tools
+
+### Windows (recommended)
+
+Install **Chocolatey** first:
+
+```powershell
+Set-ExecutionPolicy Bypass -Scope Process -Force; `
+[System.Net.ServicePointManager]::SecurityProtocol = `
+[System.Net.ServicePointManager]::SecurityProtocol -bor 3072; `
+iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+```
+
+Then install Functions tools:
+
+```bash
+choco install azure-functions-core-tools-4
+```
+
+Verify:
+
+```bash
+func --version
+```
+
+---
+
+## Install VS Code (recommended)
+
+[https://code.visualstudio.com/](https://code.visualstudio.com/)
+
+Recommended extensions:
+
+* Azure Tools
+* Terraform
+* Azure Functions
+* Prettier
+
+---
+
+# 3️⃣ Clone the Project Repository
+
+Each teammate runs:
+
+```bash
+git clone https://github.com/PrabeshShrestha786/cloud-computing-event-driven-order-poc.git
+cd cloud-computing-event-driven-order-poc
+```
+
+---
+
+# 4️⃣ Login to Azure
+
+Authenticate with your **own Azure account**.
+
+```bash
+az login
+```
+
+A browser will open.
+
+After login verify:
+
+```bash
+az account show
+```
+
+If multiple subscriptions exist:
+
+```bash
+az account set --subscription "<subscription-id>"
+```
+
+---
+
+# 5️⃣ Create Azure Infrastructure
+
+Navigate to Terraform folder:
 
 ```bash
 cd infra
+```
+
+Initialize Terraform:
+
+```bash
 terraform init
+```
+
+Terraform will automatically download:
+
+* Azure provider
+* required plugins
+
+Then create resources:
+
+```bash
 terraform apply
 ```
 
-Type:
+Confirm:
 
 ```
 yes
 ```
 
-This recreates:
+This will create:
 
 * Resource Group
-* Storage Account
+* Service Bus namespace
+* Service Bus queue
+* Cosmos DB account
+* Cosmos database
+* Cosmos container
 * Function App
-* Service Bus Namespace
-* Service Bus Queue
-* Cosmos DB
-* Cosmos DB container
+* Storage Account
 * Application Insights
 * Log Analytics
 
 ---
 
-## 2️⃣ Go to the functions folder
+# 6️⃣ Get Required Connection Strings
+
+After Terraform deploys resources, teammates must retrieve credentials.
+
+---
+
+## Service Bus Connection String
+
+Run:
 
 ```bash
-cd ../src/functions
+az servicebus namespace authorization-rule keys list \
+-g rg-prfx-dev \
+--namespace-name prfx-dev-sbns \
+-n RootManageSharedAccessKey \
+--query primaryConnectionString -o tsv
 ```
 
-Install packages if needed:
+Copy the value.
+
+---
+
+## Cosmos DB Endpoint
+
+```bash
+az cosmosdb show \
+-g rg-prfx-dev \
+-n prfx-dev-cosmos \
+--query documentEndpoint -o tsv
+```
+
+---
+
+## Cosmos DB Key
+
+```bash
+az cosmosdb keys list \
+-g rg-prfx-dev \
+-n prfx-dev-cosmos \
+--query primaryMasterKey -o tsv
+```
+
+---
+
+# 7️⃣ Create Local Function Configuration
+
+Inside the **src folder**, create file:
+
+```
+local.settings.json
+```
+
+Example:
+
+```json
+{
+ "IsEncrypted": false,
+ "Values": {
+  "FUNCTIONS_WORKER_RUNTIME": "node",
+  "SERVICE_BUS_CONNECTION_STRING": "PASTE_SERVICE_BUS_CONNECTION_STRING",
+  "COSMOS_ENDPOINT": "PASTE_ENDPOINT",
+  "COSMOS_KEY": "PASTE_KEY"
+ }
+}
+```
+
+⚠️ This file **must never be committed to GitHub**.
+
+---
+
+# 8️⃣ Install Project Dependencies
+
+Navigate to source folder:
+
+```bash
+cd src
+```
+
+Install dependencies:
 
 ```bash
 npm install
 ```
 
+This creates:
+
+```
+node_modules/
+```
+
 ---
 
-## 3️⃣ Start the Azure Functions locally
+# 9️⃣ Run Azure Functions Locally
+
+Start function runtime:
 
 ```bash
 func start
 ```
 
-You will see something like:
+Expected output:
 
 ```
 submitOrder: http://localhost:7071/api/submitOrder
-processOrder: ServiceBusTrigger
+processOrder: serviceBusTrigger
 ```
 
 ---
 
-## 4️⃣ Send a test order
+# 🔟 Test the System
 
-Open **PowerShell / terminal** and run:
+Send test order:
 
 ```bash
 curl -X POST http://localhost:7071/api/submitOrder \
 -H "Content-Type: application/json" \
--d "{\"orderId\":\"1004\",\"customer\":\"Test User\",\"items\":[\"tea\",\"cookies\"]}"
+-d '{"orderId":"1001","customer":"Test User","items":["milk","bread"]}'
+```
+
+Expected response:
+
+```json
+{
+ "message": "Order submitted successfully"
+}
 ```
 
 ---
 
-## 5️⃣ What will happen
-
-```
-HTTP request
-   ↓
-submitOrder function
-   ↓
-Message sent to Service Bus
-   ↓
-processOrder function triggered
-   ↓
-Order saved to Cosmos DB
-```
-
----
-
-## 6️⃣ Verify in Azure
+# 1️⃣1️⃣ Verify Data in Cosmos DB
 
 Open Azure Portal:
 
 ```
 Cosmos DB
- → Data Explorer
- → grocery-orders
- → orders
- → Items
+→ Data Explorer
+→ grocery-orders
+→ orders
+→ Items
 ```
 
-You should see the new order document.
+You should see order document.
+
+Example like this:
+
+```json
+{
+ "id": "1001",
+ "orderId": "1001",
+ "customer": "Test User",
+ "items": ["milk","bread"],
+ "status": "accepted"
+}
+```
 
 ---
 
-# 💰 When finished working
+# 1️⃣2️⃣ Stop Azure Resources When Finished
 
-Run:
+To avoid consuming **Azure student credits**, destroy infrastructure.
 
 ```bash
 cd infra
 terraform destroy
 ```
 
-So your **Azure student credits don’t get consumed**.
+Confirm:
 
----
+```
+yes
+```
 
-✅ Your project structure is **actually very clean**.
-
-If you want, I can also show you **3 small improvements that professors really like in Terraform projects** (cost control + reliability + cleaner architecture).
+All resources will be removed.
