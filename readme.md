@@ -2,7 +2,7 @@ Below is a **complete setup guide one can follow** (even if nothing installed).
 
 ---
 
-# Team Setup Guide
+# Setup Guide
 **Stack:** Terraform + Azure Functions + Service Bus + Cosmos DB
 
 ---
@@ -14,7 +14,7 @@ Below is a **complete setup guide one can follow** (even if nothing installed).
 
 # 2️⃣ Install Required Software
 
-All teammates must install the following.
+You must install the following.
 
 ## Install Git
 
@@ -115,7 +115,7 @@ Recommended extensions:
 
 # 3️⃣ Clone the Project Repository
 
-Each teammate runs:
+Run this:
 
 ```bash
 git clone https://github.com/PrabeshShrestha786/cloud-computing-event-driven-order-poc.git
@@ -196,7 +196,7 @@ This will create:
 
 # 6️⃣ Get Required Connection Strings
 
-After Terraform deploys resources, teammates must retrieve credentials.
+After Terraform deploys resources, you must retrieve credentials.
 
 ---
 
@@ -260,7 +260,7 @@ Example:
 }
 ```
 
-⚠️ This file **must never be committed to GitHub**.
+⚠️ This file **will never be committed to GitHub as it is ignored by .gitignore and this is the personal file**.
 
 ---
 
