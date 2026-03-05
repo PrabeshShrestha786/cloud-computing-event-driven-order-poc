@@ -78,6 +78,7 @@ terraform -version
 ### Windows (recommended)
 
 Install **Chocolatey** first:
+**Open Powershell as an admistrator and run the following command**
 
 ```powershell
 Set-ExecutionPolicy Bypass -Scope Process -Force; `
@@ -89,7 +90,7 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocola
 Then install Functions tools:
 
 ```bash
-choco install azure-functions-core-tools-4
+choco install azure-functions-core-tools -y
 ```
 
 Verify:
