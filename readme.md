@@ -253,8 +253,9 @@ Example:
 {
  "IsEncrypted": false,
  "Values": {
+  "AzureWebJobsStorage": "UseDevelopmentStorage=true",
   "FUNCTIONS_WORKER_RUNTIME": "node",
-  "SERVICE_BUS_CONNECTION_STRING": "PASTE_SERVICE_BUS_CONNECTION_STRING",
+  "ServiceBusConnection": "PASTE_SERVICE_BUS_CONNECTION_STRING",
   "COSMOS_ENDPOINT": "PASTE_ENDPOINT",
   "COSMOS_KEY": "PASTE_KEY"
  }
@@ -304,7 +305,7 @@ processOrder: serviceBusTrigger
 
 ---
 
-# 🔟 Test the System
+# 🔟 Test the System (Open new git bash and run the following)
 
 Send test order:
 
