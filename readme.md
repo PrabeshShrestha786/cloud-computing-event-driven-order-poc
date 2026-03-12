@@ -239,6 +239,29 @@ az cosmosdb keys list \
 
 ---
 
+
+## Event Grid Topic Endpoint
+
+```bash
+az eventgrid topic show \
+-g rg-prfx-dev \
+-n prfx-dev-orders-egtopic \
+--query endpoint -o tsv
+```
+
+---
+
+## Event Grid Topic Key
+
+```bash
+az eventgrid topic key list \
+-g rg-prfx-dev \
+-n prfx-dev-orders-egtopic \
+--query key1 -o tsv
+```
+
+---
+
 # 7️⃣ Create Local Function Configuration
 
 Inside the **src folder**, create file:
@@ -257,7 +280,9 @@ Example:
   "FUNCTIONS_WORKER_RUNTIME": "node",
   "ServiceBusConnection": "PASTE_SERVICE_BUS_CONNECTION_STRING",
   "COSMOS_ENDPOINT": "PASTE_ENDPOINT",
-  "COSMOS_KEY": "PASTE_KEY"
+  "COSMOS_KEY": "PASTE_KEY",
+  "EVENTGRID_TOPIC_ENDPOINT": "Paste Endpoint",
+    "EVENTGRID_TOPIC_KEY": "Paste Key"
  }
 }
 ```
