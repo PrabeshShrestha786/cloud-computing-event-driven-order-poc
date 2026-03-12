@@ -38,3 +38,13 @@ resource "azurerm_cosmosdb_sql_container" "orders" {
   partition_key_paths   = ["/orderId"]
   partition_key_version = 2
 }
+
+resource "azurerm_cosmosdb_sql_container" "store_tasks" {
+  name                = "storeTasks"
+  resource_group_name = azurerm_resource_group.rg.name
+  account_name        = azurerm_cosmosdb_account.cosmos.name
+  database_name       = azurerm_cosmosdb_sql_database.db.name
+
+  partition_key_paths   = ["/storeId"]
+  partition_key_version = 2
+}
