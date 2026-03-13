@@ -5,28 +5,90 @@ const connectionString = process.env.ServiceBusConnection;
 const queueName = "orders-queue";
 
 app.http('submitOrder', {
-    methods: ['POST'],
-    authLevel: 'anonymous',
-    handler: async (request, context) => {
+  methods: ['POST'],
+  authLevel: 'anonymous',
+  handler: async (request, context) => {
+    let order;
 
-        const order = await request.json();
-
-        const sbClient = new ServiceBusClient(connectionString);
-        const sender = sbClient.createSender(queueName);
-
-        await sender.sendMessages({
-            body: order
-        });
-
-        await sender.close();
-        await sbClient.close();
-
-        return {
-            status: 200,
-            jsonBody: {
-                message: "Order submitted successfully",
-                order: order
-            }
-        };
+    try {
+      order = await request.json();
+    } catch (error) {
+      return {
+        status: 400,
+        jsonBody: {
+          error: "Invalid JSON body"
+        }
+      };
     }
+
+    const orderId = order?.orderId;
+    const customer = order?.customer;
+    const items = order?.items;
+
+    if (!orderId || String(orderId).trim() === "") {
+      return {
+        status: 400,
+        jsonBody: {
+          error: "Validation failed",
+          details: ["orderId is required"]
+        }
+      };
+    }
+
+    if (!customer || String(customer).trim() === "") {
+      return {
+        status: 400,
+        jsonBody: {
+          error: "Validation failed",
+          details: ["customer is required"]
+        }
+      };
+    }
+
+    if (!Array.isArray(items) || items.length === 0) {
+      return {
+        status: 400,
+        jsonBody: {
+          error: "Validation failed",
+          details: ["items is required and must be a non-empty array"]
+        }
+      };
+    }
+
+    let sbClient;
+    let sender;
+
+    try {
+      sbClient = new ServiceBusClient(connectionString);
+      sender = sbClient.createSender(queueName);
+
+      await sender.sendMessages({
+        body: order
+      });
+
+      return {
+        status: 200,
+        jsonBody: {
+          message: "Order submitted successfully",
+          order: order
+        }
+      };
+    } catch (error) {
+      context.log("Failed to submit order:", error?.message || error);
+
+      return {
+        status: 500,
+        jsonBody: {
+          error: "Failed to submit order"
+        }
+      };
+    } finally {
+      if (sender) {
+        await sender.close();
+      }
+      if (sbClient) {
+        await sbClient.close();
+      }
+    }
+  }
 });

@@ -1,0 +1,6 @@
+{
+  "orderId": "5002",
+  "customer": "Duplicate Test User",
+  "items": ["apple", "banana"],
+  "storeId": "store-001"
+}
