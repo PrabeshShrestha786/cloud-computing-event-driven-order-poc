@@ -18,11 +18,11 @@ resource "azurerm_windows_function_app" "fa" {
 
   https_only = true
 
-  site_config {
-    application_stack {
-      node_version = "~18"
-    }
+ site_config {
+  application_stack {
+    node_version = "~22"
   }
+}
 
   app_settings = {
     "FUNCTIONS_WORKER_RUNTIME"              = "node"
