@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<deployment>
+  <id>afb9e6fea20f4c769ae8e65e7f85464e</id>
+  <author>N/A</author>
+  <deployer>az_cli_functions</deployer>
+  <authorEmail>N/A</authorEmail>
+  <message>Created via a push deployment</message>
+  <progress></progress>
+  <status>Success</status>
+  <statusText></statusText>
+  <lastSuccessEndTime>2026-03-12T23:51:09.1471034Z</lastSuccessEndTime>
+  <receivedTime>2026-03-12T23:50:58.3575892Z</receivedTime>
+  <startTime>2026-03-12T23:50:59.0763544Z</startTime>
+  <endTime>2026-03-12T23:51:09.1471034Z</endTime>
+  <complete>True</complete>
+  <is_temp>False</is_temp>
+  <is_readonly>True</is_readonly>
+  <project_type>BASIC FUNCTIONAPP</project_type>
+  <vsproject_id></vsproject_id>
+</deployment>

@@ -1,0 +1,139 @@
+<step title="BackgroundTrace" date="2026-03-12T23:50:56.826" instance="e1bf0a" url="/api/zipdeploy" method="POST" >
+  <step title="Updating shutdown sentinel last write time" date="2026-03-12T23:50:56.873" SemaphoreCount="7" /><!-- duration: 31ms -->
+  <step title="LockFile &apos;C:\home\site\locks\deployments.lock&apos; acquired" date="2026-03-12T23:50:56.935" /><!-- duration: 31ms -->
+  <step title="Creating temporary deployment" date="2026-03-12T23:50:56.982" /><!-- duration: 281ms -->
+  <step title="Performing fetch based deployment" date="2026-03-12T23:50:57.279" >
+    <step title="Fetching changes." date="2026-03-12T23:50:57.482" /><!-- duration: 31ms -->
+    <step title="Starting LocalZipHandler" date="2026-03-12T23:50:57.529" /><!-- duration: 31ms -->
+    <step title="Cleaning up temp folders from previous zip deployments and extracting pushed zip file C:\local\Temp\zipdeploy\lp52s0xj.zip (0.02 MB) to C:\local\Temp\zipdeploy\extracted" date="2026-03-12T23:50:57.716" /><!-- duration: 16ms -->
+    <step title="Cleaning up temp folders from previous zip deployments and extracting pushed zip file C:\local\Temp\zipdeploy\lp52s0xj.zip (0.02 MB) to C:\local\Temp\zipdeploy\extracted" date="2026-03-12T23:50:57.763" >
+      <step title="Extracting 6 entries to C:\local\Temp\zipdeploy\extracted directory" date="2026-03-12T23:50:57.795" >
+        <step title="Extracting to C:\local\Temp\zipdeploy\extracted\src\functions\processOrder.js ..." date="2026-03-12T23:50:57.810" /><!-- duration: 31ms -->
+        <step title="Extracting to C:\local\Temp\zipdeploy\extracted\src\functions\storeTaskBoardWebhook.js ..." date="2026-03-12T23:50:57.873" /><!-- duration: 31ms -->
+        <step title="Extracting to C:\local\Temp\zipdeploy\extracted\src\functions\submitOrder.js ..." date="2026-03-12T23:50:57.920" /><!-- duration: 16ms -->
+        <step title="Extracting to C:\local\Temp\zipdeploy\extracted\host.json ..." date="2026-03-12T23:50:57.982" /><!-- duration: 15ms -->
+        <step title="Extracting to C:\local\Temp\zipdeploy\extracted\package.json ..." date="2026-03-12T23:50:58.029" /><!-- duration: 47ms -->
+        <step title="Extracting to C:\local\Temp\zipdeploy\extracted\package-lock.json ..." date="2026-03-12T23:50:58.091" /><!-- duration: 31ms -->
+      </step><!-- duration: 344ms -->
+    </step><!-- duration: 406ms -->
+    <step title="Before sending BuildRequestReceived status to /api/updatedeploystatus" date="2026-03-12T23:50:58.185" /><!-- duration: 31ms -->
+    <step title="DeploymentManager.Deploy(id:afb9e6fea20f4c769ae8e65e7f85464e)" date="2026-03-12T23:50:58.232" >
+      <step title="Collecting changeset information" date="2026-03-12T23:50:58.279" /><!-- duration: 172ms -->
+      <step title="Updating submodules" date="2026-03-12T23:50:58.466" >
+        <step title="Updating submodules." date="2026-03-12T23:50:58.685" /><!-- duration: 16ms -->
+      </step><!-- duration: 250ms -->
+      <step title="Preparing deployment for commit id &apos;afb9e6fea2&apos;." date="2026-03-12T23:50:58.951" /><!-- duration: 16ms -->
+      <step title="Determining deployment builder" date="2026-03-12T23:50:59.170" >
+        <step title="UseMSBuild16: True" date="2026-03-12T23:50:59.201" /><!-- duration: 16ms -->
+        <step title="Builder is FunctionBasicBuilder" date="2026-03-12T23:50:59.263" /><!-- duration: 16ms -->
+      </step><!-- duration: 125ms -->
+      <step title="Copying SSH keys" date="2026-03-12T23:50:59.388" /><!-- duration: 31ms -->
+      <step title="Building" date="2026-03-12T23:50:59.451" >
+        <step title="Generating deployment script." date="2026-03-12T23:50:59.638" /><!-- duration: 31ms -->
+        <step title="Generating deployment script" date="2026-03-12T23:50:59.685" >
+          <step title="Using cached version of the deployment script for command: -y --no-dot-deployment -r &quot;C:\local\Temp\zipdeploy\extracted&quot; -o &quot;C:\home\site\deployments\tools&quot; --functionApp --sitePath &quot;C:\local\Temp\zipdeploy\extracted&quot;" date="2026-03-12T23:50:59.795" /><!-- duration: 16ms -->
+          <step title="Using cached version of deployment script (command: &apos;azure -y --no-dot-deployment -r &quot;C:\local\Temp\zipdeploy\extracted&quot; -o &quot;C:\home\site\deployments\tools&quot; --functionApp --sitePath &quot;C:\local\Temp\zipdeploy\extracted&quot;&apos;)." date="2026-03-12T23:50:59.873" /><!-- duration: 16ms -->
+        </step><!-- duration: 234ms -->
+        <step title="Running deployment command..." date="2026-03-12T23:51:00.123" /><!-- duration: 31ms -->
+        <step title="Command: &quot;C:\home\site\deployments\tools\deploy.cmd&quot;" date="2026-03-12T23:51:00.185" /><!-- duration: 31ms -->
+        <step title="Executing external process" date="2026-03-12T23:51:00.248" type="process" path="starter.cmd" arguments="&quot;C:\home\site\deployments\tools\deploy.cmd&quot;" >
+          <step title="Handling function App deployment." date="2026-03-12T23:51:01.171" /><!-- duration: 31ms -->
+          <step title="Not using funcpack because SCM_USE_FUNCPACK is not set to 1" date="2026-03-12T23:51:01.249" /><!-- duration: 31ms -->
+          <step title="Installing function extensions from nuget" date="2026-03-12T23:51:01.327" /><!-- duration: 16ms -->
+          <step title="Creating app_offline.htm" date="2026-03-12T23:51:01.390" /><!-- duration: 31ms -->
+          <step title="KuduSync.NET from: &apos;C:\local\Temp\zipdeploy\extracted&apos; to: &apos;C:\home\site\wwwroot&apos;" date="2026-03-12T23:51:01.468" /><!-- duration: 31ms -->
+          <step title="Deleting file: &apos;.funcignore&apos;" date="2026-03-12T23:51:01.593" /><!-- duration: 31ms -->
+          <step title="Copying file: &apos;package-lock.json&apos;" date="2026-03-12T23:51:01.686" /><!-- duration: 16ms -->
+          <step title="Deleting app_offline.htm" date="2026-03-12T23:51:01.749" /><!-- duration: 31ms -->
+          <step title="Restoring npm packages in &quot;C:\home\site\wwwroot&quot;" date="2026-03-12T23:51:01.843" /><!-- duration: 31ms -->
+          <step title="npm warn config production Use `--omit=dev` instead." date="2026-03-12T23:51:02.689" /><!-- duration: 16ms -->
+          <step title="npm warn EBADENGINE Unsupported engine {" date="2026-03-12T23:51:03.080" /><!-- duration: 16ms -->
+          <step title="npm warn EBADENGINE   package: &apos;@azure-rest/core-client@2.5.1&apos;," date="2026-03-12T23:51:03.158" /><!-- duration: 16ms -->
+          <step title="npm warn EBADENGINE   required: { node: &apos;&gt;=20.0.0&apos; }," date="2026-03-12T23:51:03.221" /><!-- duration: 31ms -->
+          <step title="npm warn EBADENGINE   current: { node: &apos;v18.20.7&apos;, npm: &apos;10.8.2&apos; }" date="2026-03-12T23:51:03.299" /><!-- duration: 16ms -->
+          <step title="npm warn EBADENGINE }" date="2026-03-12T23:51:03.361" /><!-- duration: 16ms -->
+          <step title="npm warn EBADENGINE Unsupported engine {" date="2026-03-12T23:51:03.424" /><!-- duration: 31ms -->
+          <step title="npm warn EBADENGINE   package: &apos;@azure/core-amqp@4.4.1&apos;," date="2026-03-12T23:51:03.486" /><!-- duration: 31ms -->
+          <step title="npm warn EBADENGINE   required: { node: &apos;&gt;=20.0.0&apos; }," date="2026-03-12T23:51:03.564" /><!-- duration: 16ms -->
+          <step title="npm warn EBADENGINE   current: { node: &apos;v18.20.7&apos;, npm: &apos;10.8.2&apos; }" date="2026-03-12T23:51:03.643" /><!-- duration: 16ms -->
+          <step title="npm warn EBADENGINE }" date="2026-03-12T23:51:03.721" /><!-- duration: 31ms -->
+          <step title="npm warn EBADENGINE Unsupported engine {" date="2026-03-12T23:51:03.846" >
+          <step title="up to date, audited 90 packages in 2s" date="2026-03-12T23:51:03.861" /><!-- duration: 31ms -->
+          <step title="npm warn EBADENGINE   package: &apos;@azure/core-auth@1.10.1&apos;," date="2026-03-12T23:51:03.924" /><!-- duration: 16ms -->
+          <step title="25 packages are looking for funding" date="2026-03-12T23:51:03.986" /><!-- duration: 16ms -->
+          <step title="npm warn EBADENGINE   required: { node: &apos;&gt;=20.0.0&apos; }," date="2026-03-12T23:51:04.002" /><!-- duration: 35ms -->
+>
+          <step title="  run `npm fund` for details" date="2026-03-12T23:51:04.068"           <step title="npm warn EBADENGINE   current: { node: &apos;v18.20.7&apos;, npm: &apos;10.8.2&apos; }" date="2026-03-12T23:51:04.100" /><!-- duration: 47ms -->
+>
+          <step title="found 0 vulnerabilities" date="2026-03-12T23:51:04.178" /><!-- duration: 47ms -->
+warn EBADENGINE }" date="2026-03-12T23:51:04.209" /><!-- duration: 31ms -->
+          <step title="Finished successfully." date="2026-03-12T23:51:04.272" /><!-- duration: 31ms -->
+pm warn EBADENGINE Unsupported engine {" date="2026-03-12T23:51:04.303" /><!-- duration: 31ms -->
+          <step title="npm warn EBADENGINE   package: &apos;@azure/core-client@1.10.1&apos;," date="2026-03-12T23:51:04.381" /><!-- duration: 31ms -->
+          <step title="npm warn EBADENGINE   required: { node: &apos;&gt;=20.0.0&apos; }," date="2026-03-12T23:51:04.475" /><!-- duration: 16ms -->
+          <step title="npm warn EBADENGINE   current: { node: &apos;v18.20.7&apos;, npm: &apos;10.8.2&apos; }" date="2026-03-12T23:51:04.537" /><!-- duration: 31ms -->
+          <step title="npm warn EBADENGINE }" date="2026-03-12T23:51:04.600" /><!-- duration: 31ms -->
+          <step title="npm warn EBADENGINE Unsupported engine {" date="2026-03-12T23:51:04.662" /><!-- duration: 31ms -->
+          <step title="npm warn EBADENGINE   package: &apos;@azure/core-http-compat@2.3.2&apos;," date="2026-03-12T23:51:04.740" /><!-- duration: 16ms -->
+          <step title="npm warn EBADENGINE   required: { node: &apos;&gt;=20.0.0&apos; }," date="2026-03-12T23:51:04.803" /><!-- duration: 31ms -->
+          <step title="npm warn EBADENGINE   current: { node: &apos;v18.20.7&apos;, npm: &apos;10.8.2&apos; }" date="2026-03-12T23:51:04.881" /><!-- duration: 31ms -->
+          <step title="npm warn EBADENGINE }" date="2026-03-12T23:51:04.959" /><!-- duration: 31ms -->
+          <step title="npm warn EBADENGINE Unsupported engine {" date="2026-03-12T23:51:05.037" /><!-- duration: 31ms -->
+          <step title="npm warn EBADENGINE   package: &apos;@azure/core-rest-pipeline@1.22.2&apos;," date="2026-03-12T23:51:05.115" /><!-- duration: 31ms -->
+          <step title="npm warn EBADENGINE   required: { node: &apos;&gt;=20.0.0&apos; }," date="2026-03-12T23:51:05.193" /><!-- duration: 31ms -->
+          <step title="npm warn EBADENGINE   current: { node: &apos;v18.20.7&apos;, npm: &apos;10.8.2&apos; }" date="2026-03-12T23:51:05.272" /><!-- duration: 16ms -->
+          <step title="npm warn EBADENGINE }" date="2026-03-12T23:51:05.334" /><!-- duration: 31ms -->
+          <step title="npm warn EBADENGINE Unsupported engine {" date="2026-03-12T23:51:05.397" /><!-- duration: 31ms -->
+          <step title="npm warn EBADENGINE   package: &apos;@azure/core-tracing@1.3.1&apos;," date="2026-03-12T23:51:05.475" /><!-- duration: 16ms -->
+          <step title="npm warn EBADENGINE   required: { node: &apos;&gt;=20.0.0&apos; }," date="2026-03-12T23:51:05.537" /><!-- duration: 16ms -->
+          <step title="npm warn EBADENGINE   current: { node: &apos;v18.20.7&apos;, npm: &apos;10.8.2&apos; }" date="2026-03-12T23:51:05.600" /><!-- duration: 31ms -->
+          <step title="npm warn EBADENGINE }" date="2026-03-12T23:51:05.678" /><!-- duration: 16ms -->
+          <step title="npm warn EBADENGINE Unsupported engine {" date="2026-03-12T23:51:05.740" /><!-- duration: 31ms -->
+          <step title="npm warn EBADENGINE   package: &apos;@azure/core-util@1.13.1&apos;," date="2026-03-12T23:51:05.818" /><!-- duration: 16ms -->
+          <step title="npm warn EBADENGINE   required: { node: &apos;&gt;=20.0.0&apos; }," date="2026-03-12T23:51:05.881" /><!-- duration: 31ms -->
+          <step title="npm warn EBADENGINE   current: { node: &apos;v18.20.7&apos;, npm: &apos;10.8.2&apos; }" date="2026-03-12T23:51:05.959" /><!-- duration: 16ms -->
+          <step title="npm warn EBADENGINE }" date="2026-03-12T23:51:06.022" /><!-- duration: 31ms -->
+          <step title="npm warn EBADENGINE Unsupported engine {" date="2026-03-12T23:51:06.115" /><!-- duration: 16ms -->
+          <step title="npm warn EBADENGINE   package: &apos;@azure/core-xml@1.5.0&apos;," date="2026-03-12T23:51:06.193" /><!-- duration: 31ms -->
+          <step title="npm warn EBADENGINE   required: { node: &apos;&gt;=20.0.0&apos; }," date="2026-03-12T23:51:06.256" /><!-- duration: 31ms -->
+          <step title="npm warn EBADENGINE   current: { node: &apos;v18.20.7&apos;, npm: &apos;10.8.2&apos; }" date="2026-03-12T23:51:06.334" /><!-- duration: 31ms -->
+          <step title="npm warn EBADENGINE }" date="2026-03-12T23:51:06.412" /><!-- duration: 16ms -->
+          <step title="npm warn EBADENGINE Unsupported engine {" date="2026-03-12T23:51:06.475" /><!-- duration: 16ms -->
+          <step title="npm warn EBADENGINE   package: &apos;@azure/cosmos@4.9.1&apos;," date="2026-03-12T23:51:06.553" /><!-- duration: 31ms -->
+          <step title="npm warn EBADENGINE   required: { node: &apos;&gt;=20.0.0&apos; }," date="2026-03-12T23:51:06.631" /><!-- duration: 31ms -->
+          <step title="npm warn EBADENGINE   current: { node: &apos;v18.20.7&apos;, npm: &apos;10.8.2&apos; }" date="2026-03-12T23:51:06.709" /><!-- duration: 31ms -->
+          <step title="npm warn EBADENGINE }" date="2026-03-12T23:51:06.787" /><!-- duration: 16ms -->
+          <step title="npm warn EBADENGINE Unsupported engine {" date="2026-03-12T23:51:06.865" /><!-- duration: 31ms -->
+          <step title="npm warn EBADENGINE   package: &apos;@azure/functions@4.11.2&apos;," date="2026-03-12T23:51:06.943" /><!-- duration: 16ms -->
+          <step title="npm warn EBADENGINE   required: { node: &apos;&gt;=20.0&apos; }," date="2026-03-12T23:51:07.006" /><!-- duration: 16ms -->
+          <step title="npm warn EBADENGINE   current: { node: &apos;v18.20.7&apos;, npm: &apos;10.8.2&apos; }" date="2026-03-12T23:51:07.084" /><!-- duration: 16ms -->
+          <step title="npm warn EBADENGINE }" date="2026-03-12T23:51:07.147" /><!-- duration: 31ms -->
+          <step title="npm warn EBADENGINE Unsupported engine {" date="2026-03-12T23:51:07.225" /><!-- duration: 16ms -->
+          <step title="npm warn EBADENGINE   package: &apos;@azure/logger@1.3.0&apos;," date="2026-03-12T23:51:07.303" /><!-- duration: 16ms -->
+          <step title="npm warn EBADENGINE   required: { node: &apos;&gt;=20.0.0&apos; }," date="2026-03-12T23:51:07.365" /><!-- duration: 31ms -->
+          <step title="npm warn EBADENGINE   current: { node: &apos;v18.20.7&apos;, npm: &apos;10.8.2&apos; }" date="2026-03-12T23:51:07.443" /><!-- duration: 16ms -->
+          <step title="npm warn EBADENGINE }" date="2026-03-12T23:51:07.506" /><!-- duration: 16ms -->
+          <step title="npm warn EBADENGINE Unsupported engine {" date="2026-03-12T23:51:07.568" /><!-- duration: 31ms -->
+          <step title="npm warn EBADENGINE   package: &apos;@typespec/ts-http-runtime@0.3.3&apos;," date="2026-03-12T23:51:07.647" /><!-- duration: 32ms -->
+          <step title="npm warn EBADENGINE   required: { node: &apos;&gt;=20.0.0&apos; }," date="2026-03-12T23:51:07.725" /><!-- duration: 16ms -->
+          <step title="npm warn EBADENGINE   current: { node: &apos;v18.20.7&apos;, npm: &apos;10.8.2&apos; }" date="2026-03-12T23:51:07.787" /><!-- duration: 31ms -->
+          <step title="npm warn EBADENGINE }" date="2026-03-12T23:51:07.865" /><!-- duration: 31ms -->
+          <step title="npm notice" date="2026-03-12T23:51:07.943" /><!-- duration: 16ms -->
+          <step title="npm notice New major version of npm available! 10.8.2 -&gt; 11.11.1" date="2026-03-12T23:51:08.006" /><!-- duration: 16ms -->
+          <step title="npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.11.1" date="2026-03-12T23:51:08.084" /><!-- duration: 47ms -->
+          <step title="npm notice To update run: npm install -g npm@11.11.1" date="2026-03-12T23:51:08.178" /><!-- duration: 31ms -->
+          <step title="npm notice" date="2026-03-12T23:51:08.256" /><!-- duration: 31ms -->
+        </step><!-- duration: 8071ms -->
+        <step title="Running post deployment command(s)..." date="2026-03-12T23:51:08.506" /><!-- duration: 31ms -->
+        <step title="Triggering recycle (preview mode disabled)." date="2026-03-12T23:51:08.740" /><!-- duration: 31ms -->
+        <step title="Ignoring FS watcher based recycle request as this is a classic Windows app." date="2026-03-12T23:51:08.787" /><!-- duration: 31ms -->
+        <step title="Deployment successful. DEPLOYMENTINFO: deploymentPath = Functions App ZipDeploy. Extract zip. Remote build. , deployer = az_cli_functions, os = windows, sku = Dynamic, language = node, siteName = prfx-dev-func, slotName = Production, siteHostName = prfx-dev-func.azurewebsites.net, deploymentStatus = Success" date="2026-03-12T23:51:09.037" /><!-- duration: 32ms -->
+      </step><!-- duration: 10055ms -->
+    </step><!-- duration: 11289ms -->
+    <step title="Cleaning up temp files" date="2026-03-12T23:51:09.553" /><!-- duration: 16ms -->
+    <step title="Begin HttpPost https://prfx-dev-func.scm.azurewebsites.net/operations/settriggers, x-ms-request-id: 4861b766-1e6e-11f1-b986-f875a49a4045" date="2026-03-12T23:51:09.647" /><!-- duration: 31ms -->
+    <step title="End HttpPost, status: OK" date="2026-03-12T23:51:10.022" /><!-- duration: 31ms -->
+    <step title="Scheduling background sync triggers after delay" date="2026-03-12T23:51:10.068" /><!-- duration: 31ms -->
+  </step><!-- duration: 12914ms -->
+  <step title="LockFile &apos;C:\home\site\locks\deployments.lock&apos; released" date="2026-03-12T23:51:10.209" /><!-- duration: 31ms -->
+</step><!-- duration: 13446ms -->

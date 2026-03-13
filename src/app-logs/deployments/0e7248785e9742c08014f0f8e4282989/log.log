@@ -1,0 +1,104 @@
+2026-03-12T22:00:58.1488440Z,Updating submodules.,d2705e67-dbd3-497c-b9c4-90505f8815b3,0
+2026-03-12T22:00:58.3832177Z,Preparing deployment for commit id '0e7248785e'.,10392ab9-9e39-413e-9db3-c36c3054f9ba,0
+2026-03-12T22:00:59.0238455Z,Generating deployment script.,2258b836-5af9-429b-95e8-3c4e49d7824f,0
+	2026-03-12T22:00:59.1644731Z,Using the following command to generate deployment script: 'azure site deploymentscript -y --no-dot-deployment -r "C:\local\Temp\zipdeploy\extracted" -o "C:\home\site\deployments\tools" --functionApp --sitePath "C:\local\Temp\zipdeploy\extracted"'.,,0
+	2026-03-12T22:00:59.6194772Z,Generating deployment script for function App,,0
+	2026-03-12T22:00:59.6819642Z,Generated deployment script files,,0
+2026-03-12T22:01:00.0100961Z,Running deployment command...,7b6b5751-13b5-4d2e-ad96-2c51bbbea914,0
+	2026-03-12T22:01:00.0726225Z,Command: "C:\home\site\deployments\tools\deploy.cmd",,0
+	2026-03-12T22:01:00.8259350Z,Handling function App deployment.,,0
+	2026-03-12T22:01:00.8728090Z,Not using funcpack because SCM_USE_FUNCPACK is not set to 1,,0
+	2026-03-12T22:01:00.9353118Z,Installing function extensions from nuget,,0
+	2026-03-12T22:01:01.0134439Z,Creating app_offline.htm,,0
+	2026-03-12T22:01:01.1071955Z,KuduSync.NET from: 'C:\local\Temp\zipdeploy\extracted' to: 'C:\home\site\wwwroot',,0
+	2026-03-12T22:01:01.1696792Z,Copying file: '.funcignore',,0
+	2026-03-12T22:01:01.2321828Z,Copying file: 'host.json',,0
+	2026-03-12T22:01:01.2946888Z,Copying file: 'package-lock.json',,0
+	2026-03-12T22:01:01.3571843Z,Copying file: 'package.json',,0
+	2026-03-12T22:01:01.4196797Z,Copying file: 'src\functions\processOrder.js',,0
+	2026-03-12T22:01:01.4978042Z,Copying file: 'src\functions\storeTaskBoardWebhook.js',,0
+	2026-03-12T22:01:01.5603053Z,Copying file: 'src\functions\submitOrder.js',,0
+	2026-03-12T22:01:01.6228185Z,Deleting app_offline.htm,,0
+	2026-03-12T22:01:01.6853100Z,Restoring npm packages in "C:\home\site\wwwroot",,0
+	2026-03-12T22:01:02.3291543Z,npm warn config production Use `--omit=dev` instead.,,1
+	2026-03-12T22:01:03.6319219Z,npm warn EBADENGINE Unsupported engine {,,1
+	2026-03-12T22:01:03.6945352Z,npm warn EBADENGINE   package: '@azure-rest/core-client@2.5.1'&comma;,,1
+	2026-03-12T22:01:03.7569083Z,npm warn EBADENGINE   required: { node: '>=20.0.0' }&comma;,,1
+	2026-03-12T22:01:03.8194045Z,npm warn EBADENGINE   current: { node: 'v18.20.7'&comma; npm: '10.8.2' },,1
+	2026-03-12T22:01:03.8818989Z,npm warn EBADENGINE },,1
+	2026-03-12T22:01:03.9443967Z,npm warn EBADENGINE Unsupported engine {,,1
+	2026-03-12T22:01:04.0069144Z,npm warn EBADENGINE   package: '@azure/core-amqp@4.4.1'&comma;,,1
+	2026-03-12T22:01:04.0850382Z,npm warn EBADENGINE   required: { node: '>=20.0.0' }&comma;,,1
+	2026-03-12T22:01:04.1631465Z,npm warn EBADENGINE   current: { node: 'v18.20.7'&comma; npm: '10.8.2' },,1
+	2026-03-12T22:01:04.2256566Z,npm warn EBADENGINE },,1
+	2026-03-12T22:01:04.2881495Z,npm warn EBADENGINE Unsupported engine {,,1
+	2026-03-12T22:01:04.3350250Z,npm warn EBADENGINE   package: '@azure/core-auth@1.10.1'&comma;,,1
+	2026-03-12T22:01:04.3975281Z,npm warn EBADENGINE   required: { node: '>=20.0.0' }&comma;,,1
+	2026-03-12T22:01:04.4602035Z,npm warn EBADENGINE   current: { node: 'v18.20.7'&comma; npm: '10.8.2' },,1
+	2026-03-12T22:01:04.5225220Z,npm warn EBADENGINE },,1
+	2026-03-12T22:01:04.5850277Z,npm warn EBADENGINE Unsupported engine {,,1
+	2026-03-12T22:01:04.6475304Z,npm warn EBADENGINE   package: '@azure/core-client@1.10.1'&comma;,,1
+	2026-03-12T22:01:04.7256432Z,npm warn EBADENGINE   required: { node: '>=20.0.0' }&comma;,,1
+	2026-03-12T22:01:04.7882913Z,npm warn EBADENGINE   current: { node: 'v18.20.7'&comma; npm: '10.8.2' },,1
+	2026-03-12T22:01:04.8508869Z,npm warn EBADENGINE },,1
+	2026-03-12T22:01:04.9133830Z,npm warn EBADENGINE Unsupported engine {,,1
+	2026-03-12T22:01:04.9756497Z,npm warn EBADENGINE   package: '@azure/core-http-compat@2.3.2'&comma;,,1
+	2026-03-12T22:01:05.0381439Z,npm warn EBADENGINE   required: { node: '>=20.0.0' }&comma;,,1
+	2026-03-12T22:01:05.1162758Z,npm warn EBADENGINE   current: { node: 'v18.20.7'&comma; npm: '10.8.2' },,1
+	2026-03-12T22:01:05.1944003Z,npm warn EBADENGINE },,1
+	2026-03-12T22:01:05.2569050Z,npm warn EBADENGINE Unsupported engine {,,1
+	2026-03-12T22:01:05.3193931Z,npm warn EBADENGINE   package: '@azure/core-rest-pipeline@1.22.2'&comma;,,1
+	2026-03-12T22:01:05.3818912Z,npm warn EBADENGINE   required: { node: '>=20.0.0' }&comma;,,1
+	2026-03-12T22:01:05.4443919Z,npm warn EBADENGINE   current: { node: 'v18.20.7'&comma; npm: '10.8.2' },,1
+	2026-03-12T22:01:05.5068941Z,npm warn EBADENGINE },,1
+	2026-03-12T22:01:05.5693917Z,npm warn EBADENGINE Unsupported engine {,,1
+	2026-03-12T22:01:05.6318909Z,npm warn EBADENGINE   package: '@azure/core-tracing@1.3.1'&comma;,,1
+	2026-03-12T22:01:05.6944008Z,npm warn EBADENGINE   required: { node: '>=20.0.0' }&comma;,,1
+	2026-03-12T22:01:05.7412774Z,npm warn EBADENGINE   current: { node: 'v18.20.7'&comma; npm: '10.8.2' },,1
+	2026-03-12T22:01:05.8037774Z,npm warn EBADENGINE },,1
+	2026-03-12T22:01:05.8662819Z,npm warn EBADENGINE Unsupported engine {,,1
+	2026-03-12T22:01:05.9287659Z,npm warn EBADENGINE   package: '@azure/core-util@1.13.1'&comma;,,1
+	2026-03-12T22:01:05.9912664Z,npm warn EBADENGINE   required: { node: '>=20.0.0' }&comma;,,1
+	2026-03-12T22:01:06.0701185Z,npm warn EBADENGINE   current: { node: 'v18.20.7'&comma; npm: '10.8.2' },,1
+	2026-03-12T22:01:06.1318966Z,npm warn EBADENGINE },,1
+	2026-03-12T22:01:06.2256428Z,npm warn EBADENGINE Unsupported engine {,,1
+	2026-03-12T22:01:06.2881484Z,npm warn EBADENGINE   package: '@azure/core-xml@1.5.0'&comma;,,1
+	2026-03-12T22:01:06.3506488Z,npm warn EBADENGINE   required: { node: '>=20.0.0' }&comma;,,1
+	2026-03-12T22:01:06.5068970Z,npm warn EBADENGINE   current: { node: 'v18.20.7'&comma; npm: '10.8.2' },,1
+	2026-03-12T22:01:06.5693877Z,npm warn EBADENGINE },,1
+	2026-03-12T22:01:06.6318865Z,npm warn EBADENGINE Unsupported engine {,,1
+	2026-03-12T22:01:06.6943933Z,npm warn EBADENGINE   package: '@azure/cosmos@4.9.1'&comma;,,1
+	2026-03-12T22:01:06.7568915Z,npm warn EBADENGINE   required: { node: '>=20.0.0' }&comma;,,1
+	2026-03-12T22:01:06.8193954Z,npm warn EBADENGINE   current: { node: 'v18.20.7'&comma; npm: '10.8.2' },,1
+	2026-03-12T22:01:06.8818960Z,npm warn EBADENGINE },,1
+	2026-03-12T22:01:06.9615905Z,npm warn EBADENGINE Unsupported engine {,,1
+	2026-03-12T22:01:07.0078133Z,npm warn EBADENGINE   package: '@azure/functions@4.11.2'&comma;,,1
+	2026-03-12T22:01:07.0904646Z,npm warn EBADENGINE   required: { node: '>=20.0' }&comma;,,1
+	2026-03-12T22:01:07.1529552Z,npm warn EBADENGINE   current: { node: 'v18.20.7'&comma; npm: '10.8.2' },,1
+	2026-03-12T22:01:07.2154549Z,npm warn EBADENGINE },,1
+	2026-03-12T22:01:07.2623347Z,npm warn EBADENGINE Unsupported engine {,,1
+	2026-03-12T22:01:07.3248325Z,npm warn EBADENGINE   package: '@azure/logger@1.3.0'&comma;,,1
+	2026-03-12T22:01:07.3717083Z,npm warn EBADENGINE   required: { node: '>=20.0.0' }&comma;,,1
+	2026-03-12T22:01:07.4344118Z,npm warn EBADENGINE   current: { node: 'v18.20.7'&comma; npm: '10.8.2' },,1
+	2026-03-12T22:01:07.4967087Z,npm warn EBADENGINE },,1
+	2026-03-12T22:01:07.5591946Z,npm warn EBADENGINE Unsupported engine {,,1
+	2026-03-12T22:01:07.6217102Z,npm warn EBADENGINE   package: '@typespec/ts-http-runtime@0.3.3'&comma;,,1
+	2026-03-12T22:01:07.6688377Z,npm warn EBADENGINE   required: { node: '>=20.0.0' }&comma;,,1
+	2026-03-12T22:01:07.7310757Z,npm warn EBADENGINE   current: { node: 'v18.20.7'&comma; npm: '10.8.2' },,1
+	2026-03-12T22:01:07.7935745Z,npm warn EBADENGINE },,1
+	2026-03-12T22:05:45.4154537Z,,,0
+	2026-03-12T22:05:45.4467032Z,npm notice,,1
+	2026-03-12T22:05:45.4779533Z,added 89 packages&comma; and audited 90 packages in 5m,,0
+	2026-03-12T22:05:45.5092054Z,npm notice New major version of npm available! 10.8.2 -> 11.11.1,,1
+	2026-03-12T22:05:45.5404470Z,,,0
+	2026-03-12T22:05:45.5873357Z,25 packages are looking for funding,,0
+	2026-03-12T22:05:45.6029542Z,npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.11.1,,1
+	2026-03-12T22:05:45.6498400Z,  run `npm fund` for details,,0
+	2026-03-12T22:05:45.6810919Z,npm notice To update run: npm install -g npm@11.11.1,,1
+	2026-03-12T22:05:45.7279536Z,,,0
+	2026-03-12T22:05:45.7435847Z,found 0 vulnerabilities,,0
+	2026-03-12T22:05:45.7592033Z,npm notice,,1
+	2026-03-12T22:05:45.8060841Z,Finished successfully.,,0
+2026-03-12T22:05:46.0404415Z,Running post deployment command(s)...,39a41b32-67b2-43cb-8d87-5aaef7761df7,0
+2026-03-12T22:05:46.2748093Z,Triggering recycle (preview mode disabled).,67f88c48-c1ba-4d42-b142-448b4ba4d47c,0
+2026-03-12T22:05:46.5248170Z,Deployment successful.,ab3c7ea2-bf9c-44ef-8c5f-30a7e6229052,0
