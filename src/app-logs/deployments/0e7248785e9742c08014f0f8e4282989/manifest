@@ -1,0 +1,9 @@
+.funcignore
+host.json
+package-lock.json
+package.json
+src
+src\functions
+src\functions\processOrder.js
+src\functions\storeTaskBoardWebhook.js
+src\functions\submitOrder.js

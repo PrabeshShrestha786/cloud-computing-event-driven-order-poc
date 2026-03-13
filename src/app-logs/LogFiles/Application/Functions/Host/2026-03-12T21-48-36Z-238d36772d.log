@@ -1,0 +1,69 @@
+2026-03-12T21:48:36.047 [Information] 0 functions found (Custom)
+2026-03-12T21:48:36.056 [Information] No functions were found. This can occur before you deploy code to your function app or when the host.json file is missing from the most recent deployment. Make sure that your deployment package includes the host.json file in the root of the package. For deployment package requirements, see https://aka.ms/functions-deployment-technologies.
+2026-03-12T21:48:36.056 [Information] 0 functions loaded
+2026-03-12T21:48:36.063 [Information] 0 functions found (Custom)
+2026-03-12T21:48:36.064 [Information] No functions were found. This can occur before you deploy code to your function app or when the host.json file is missing from the most recent deployment. Make sure that your deployment package includes the host.json file in the root of the package. For deployment package requirements, see https://aka.ms/functions-deployment-technologies.
+2026-03-12T21:48:36.064 [Information] 0 functions loaded
+2026-03-12T21:48:36.298 [Information] Loading functions metadata
+2026-03-12T21:48:36.299 [Information] Reading functions metadata (Custom)
+2026-03-12T21:48:36.299 [Information] 0 functions found (Custom)
+2026-03-12T21:48:36.299 [Information] No functions were found. This can occur before you deploy code to your function app or when the host.json file is missing from the most recent deployment. Make sure that your deployment package includes the host.json file in the root of the package. For deployment package requirements, see https://aka.ms/functions-deployment-technologies.
+2026-03-12T21:48:36.299 [Information] 0 functions loaded
+2026-03-12T21:48:36.302 [Information] HttpOptions
+{
+  "DynamicThrottlesEnabled": true,
+  "EnableChunkedRequestBinding": false,
+  "MaxConcurrentRequests": 100,
+  "MaxOutstandingRequests": 200,
+  "RoutePrefix": "api"
+}
+2026-03-12T21:48:36.302 [Information] ConcurrencyOptions
+{
+  "DynamicConcurrencyEnabled": false,
+  "MaximumFunctionConcurrency": 500,
+  "CPUThreshold": 0.8,
+  "SnapshotPersistenceEnabled": true
+}
+2026-03-12T21:48:36.312 [Information] Loading functions metadata
+2026-03-12T21:48:36.313 [Information] Reading functions metadata (Custom)
+2026-03-12T21:48:36.313 [Information] 0 functions found (Custom)
+2026-03-12T21:48:36.313 [Information] No functions were found. This can occur before you deploy code to your function app or when the host.json file is missing from the most recent deployment. Make sure that your deployment package includes the host.json file in the root of the package. For deployment package requirements, see https://aka.ms/functions-deployment-technologies.
+2026-03-12T21:48:36.313 [Information] 0 functions loaded
+2026-03-12T21:48:36.722 [Information] Loading functions metadata
+2026-03-12T21:48:36.723 [Information] Reading functions metadata (Custom)
+2026-03-12T21:48:36.723 [Information] 0 functions found (Custom)
+2026-03-12T21:48:36.723 [Information] No functions were found. This can occur before you deploy code to your function app or when the host.json file is missing from the most recent deployment. Make sure that your deployment package includes the host.json file in the root of the package. For deployment package requirements, see https://aka.ms/functions-deployment-technologies.
+2026-03-12T21:48:36.724 [Information] 0 functions loaded
+2026-03-12T21:48:36.724 [Information] Loading functions metadata
+2026-03-12T21:48:36.724 [Information] Reading functions metadata (Custom)
+2026-03-12T21:48:36.725 [Information] 0 functions found (Custom)
+2026-03-12T21:48:36.725 [Information] No functions were found. This can occur before you deploy code to your function app or when the host.json file is missing from the most recent deployment. Make sure that your deployment package includes the host.json file in the root of the package. For deployment package requirements, see https://aka.ms/functions-deployment-technologies.
+2026-03-12T21:48:36.725 [Information] 0 functions loaded
+2026-03-12T21:48:38.908 [Information] Host Status: {
+  "id": "prfx-dev-func",
+  "state": "Running",
+  "version": "4.1047.100.26071",
+  "versionDetails": "4.1047.100+d2b723ade785c2630569ea74606a94486029c8a4",
+  "platformVersion": "107.0.7.59",
+  "instanceId": "238d36772d59cb17bc792edabe34ba7a41f0a15ff110c11e5ab37253d342cb33",
+  "computerName": "10-30-0-239",
+  "processUptime": 719591,
+  "functionAppContentEditingState": "Unknown",
+  "extensionBundle": {
+    "id": "Microsoft.Azure.Functions.ExtensionBundle",
+    "version": "4.32.0"
+  }
+}
+2026-03-12T21:48:40.772 [Information] Host lock lease acquired by instance ID '238d36772d59cb17bc792edabe34ba7a'.
+2026-03-12T21:49:05.934 [Information] Loading functions metadata
+2026-03-12T21:49:05.967 [Information] Reading functions metadata (Custom)
+2026-03-12T21:49:05.968 [Information] 0 functions found (Custom)
+2026-03-12T21:49:05.968 [Information] No functions were found. This can occur before you deploy code to your function app or when the host.json file is missing from the most recent deployment. Make sure that your deployment package includes the host.json file in the root of the package. For deployment package requirements, see https://aka.ms/functions-deployment-technologies.
+2026-03-12T21:49:05.968 [Information] 0 functions loaded
+2026-03-12T21:49:05.968 [Information] Loading functions metadata
+2026-03-12T21:49:05.969 [Information] Reading functions metadata (Custom)
+2026-03-12T21:49:05.969 [Information] 0 functions found (Custom)
+2026-03-12T21:49:05.969 [Information] No functions were found. This can occur before you deploy code to your function app or when the host.json file is missing from the most recent deployment. Make sure that your deployment package includes the host.json file in the root of the package. For deployment package requirements, see https://aka.ms/functions-deployment-technologies.
+2026-03-12T21:49:05.969 [Information] 0 functions loaded
+2026-03-12T21:53:32.362 [Information] Stopping JobHost
+2026-03-12T21:53:32.362 [Information] Job host stopped

@@ -16,7 +16,7 @@ app.serviceBusQueue('processOrder', {
   queueName: 'orders-queue',
   handler: async (message, context) => {
     // message.body is what we sent from submitOrder
-    const incoming = message?.body ?? message ?? {};
+    const incoming = message || {};
 
     // Ensure required fields exist
     const orderId = incoming.orderId || incoming.id;

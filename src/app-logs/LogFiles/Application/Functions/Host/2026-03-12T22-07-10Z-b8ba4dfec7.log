@@ -1,0 +1,224 @@
+2026-03-12T22:07:10.529 [Information] Host Status: {
+  "id": "prfx-dev-func",
+  "state": "Running",
+  "version": "4.1047.100.26071",
+  "versionDetails": "4.1047.100+d2b723ade785c2630569ea74606a94486029c8a4",
+  "platformVersion": "107.0.7.59",
+  "instanceId": "b8ba4dfec7c57c050ec44098e83e46edda2761adffdf7b6ade9f7a9ef5835470",
+  "computerName": "10-30-0-126",
+  "processUptime": 1482443,
+  "functionAppContentEditingState": "Unknown",
+  "extensionBundle": {
+    "id": "Microsoft.Azure.Functions.ExtensionBundle",
+    "version": "4.32.0"
+  }
+}
+2026-03-12T22:07:12.514 [Information] Host Status: {
+  "id": "prfx-dev-func",
+  "state": "Running",
+  "version": "4.1047.100.26071",
+  "versionDetails": "4.1047.100+d2b723ade785c2630569ea74606a94486029c8a4",
+  "platformVersion": "107.0.7.59",
+  "instanceId": "b8ba4dfec7c57c050ec44098e83e46edda2761adffdf7b6ade9f7a9ef5835470",
+  "computerName": "10-30-0-126",
+  "processUptime": 1484430,
+  "functionAppContentEditingState": "Unknown",
+  "extensionBundle": {
+    "id": "Microsoft.Azure.Functions.ExtensionBundle",
+    "version": "4.32.0"
+  }
+}
+2026-03-12T22:07:13.123 [Information] Retrying to start listener for function 'Functions.processOrder' (Attempt 4)
+2026-03-12T22:07:13.123 [Error] The listener for function 'Functions.processOrder' was unable to start.
+Microsoft.Azure.WebJobs.Host.Listeners.FunctionListenerException : The listener for function 'Functions.processOrder' was unable to start. ---> System.InvalidOperationException : Service Bus account connection string with name 'ServiceBusConnection' does not exist in the settings. Make sure that it is a defined App Setting.
+   at Microsoft.Azure.WebJobs.Extensions.ServiceBus.Config.ServiceBusClientFactory.ResolveConnectionInformation(String connection)
+   at Microsoft.Azure.WebJobs.Extensions.ServiceBus.Config.ServiceBusClientFactory.CreateClientFromSetting(String connection)
+   at Microsoft.Azure.WebJobs.ServiceBus.Listeners.ServiceBusListener.<>c__DisplayClass36_0.<.ctor>b__0()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication,Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.get_Value()
+   at Microsoft.Azure.WebJobs.ServiceBus.Listeners.ServiceBusListener.<>c__DisplayClass36_0.<.ctor>b__2()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.get_Value()
+   at async Microsoft.Azure.WebJobs.ServiceBus.Listeners.ServiceBusListener.StartAsync(CancellationToken cancellationToken)
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at async Microsoft.Azure.WebJobs.Host.Listeners.FunctionListener.StartAsync(??) at /_/src/Microsoft.Azure.WebJobs.Host/Listeners/FunctionListener.cs : 68
+   End of inner exception
+2026-03-12T22:07:34.171 [Information] Retrying to start listener for function 'Functions.processOrder' (Attempt 5)
+2026-03-12T22:07:34.172 [Error] The listener for function 'Functions.processOrder' was unable to start.
+Microsoft.Azure.WebJobs.Host.Listeners.FunctionListenerException : The listener for function 'Functions.processOrder' was unable to start. ---> System.InvalidOperationException : Service Bus account connection string with name 'ServiceBusConnection' does not exist in the settings. Make sure that it is a defined App Setting.
+   at Microsoft.Azure.WebJobs.Extensions.ServiceBus.Config.ServiceBusClientFactory.ResolveConnectionInformation(String connection)
+   at Microsoft.Azure.WebJobs.Extensions.ServiceBus.Config.ServiceBusClientFactory.CreateClientFromSetting(String connection)
+   at Microsoft.Azure.WebJobs.ServiceBus.Listeners.ServiceBusListener.<>c__DisplayClass36_0.<.ctor>b__0()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication,Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.get_Value()
+   at Microsoft.Azure.WebJobs.ServiceBus.Listeners.ServiceBusListener.<>c__DisplayClass36_0.<.ctor>b__2()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.get_Value()
+   at async Microsoft.Azure.WebJobs.ServiceBus.Listeners.ServiceBusListener.StartAsync(CancellationToken cancellationToken)
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at async Microsoft.Azure.WebJobs.Host.Listeners.FunctionListener.StartAsync(??) at /_/src/Microsoft.Azure.WebJobs.Host/Listeners/FunctionListener.cs : 68
+   End of inner exception
+2026-03-12T22:07:39.388 [Information] Worker process started and initialized.
+2026-03-12T22:08:05.914 [Information] Retrying to start listener for function 'Functions.processOrder' (Attempt 6)
+2026-03-12T22:08:05.914 [Error] The listener for function 'Functions.processOrder' was unable to start.
+Microsoft.Azure.WebJobs.Host.Listeners.FunctionListenerException : The listener for function 'Functions.processOrder' was unable to start. ---> System.InvalidOperationException : Service Bus account connection string with name 'ServiceBusConnection' does not exist in the settings. Make sure that it is a defined App Setting.
+   at Microsoft.Azure.WebJobs.Extensions.ServiceBus.Config.ServiceBusClientFactory.ResolveConnectionInformation(String connection)
+   at Microsoft.Azure.WebJobs.Extensions.ServiceBus.Config.ServiceBusClientFactory.CreateClientFromSetting(String connection)
+   at Microsoft.Azure.WebJobs.ServiceBus.Listeners.ServiceBusListener.<>c__DisplayClass36_0.<.ctor>b__0()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication,Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.get_Value()
+   at Microsoft.Azure.WebJobs.ServiceBus.Listeners.ServiceBusListener.<>c__DisplayClass36_0.<.ctor>b__2()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.get_Value()
+   at async Microsoft.Azure.WebJobs.ServiceBus.Listeners.ServiceBusListener.StartAsync(CancellationToken cancellationToken)
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at async Microsoft.Azure.WebJobs.Host.Listeners.FunctionListener.StartAsync(??) at /_/src/Microsoft.Azure.WebJobs.Host/Listeners/FunctionListener.cs : 68
+   End of inner exception
+2026-03-12T22:09:18.800 [Information] Retrying to start listener for function 'Functions.processOrder' (Attempt 7)
+2026-03-12T22:09:18.801 [Error] The listener for function 'Functions.processOrder' was unable to start.
+Microsoft.Azure.WebJobs.Host.Listeners.FunctionListenerException : The listener for function 'Functions.processOrder' was unable to start. ---> System.InvalidOperationException : Service Bus account connection string with name 'ServiceBusConnection' does not exist in the settings. Make sure that it is a defined App Setting.
+   at Microsoft.Azure.WebJobs.Extensions.ServiceBus.Config.ServiceBusClientFactory.ResolveConnectionInformation(String connection)
+   at Microsoft.Azure.WebJobs.Extensions.ServiceBus.Config.ServiceBusClientFactory.CreateClientFromSetting(String connection)
+   at Microsoft.Azure.WebJobs.ServiceBus.Listeners.ServiceBusListener.<>c__DisplayClass36_0.<.ctor>b__0()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication,Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.get_Value()
+   at Microsoft.Azure.WebJobs.ServiceBus.Listeners.ServiceBusListener.<>c__DisplayClass36_0.<.ctor>b__2()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.get_Value()
+   at async Microsoft.Azure.WebJobs.ServiceBus.Listeners.ServiceBusListener.StartAsync(CancellationToken cancellationToken)
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at async Microsoft.Azure.WebJobs.Host.Listeners.FunctionListener.StartAsync(??) at /_/src/Microsoft.Azure.WebJobs.Host/Listeners/FunctionListener.cs : 68
+   End of inner exception
+2026-03-12T22:11:18.799 [Information] Retrying to start listener for function 'Functions.processOrder' (Attempt 8)
+2026-03-12T22:11:18.800 [Error] The listener for function 'Functions.processOrder' was unable to start.
+Microsoft.Azure.WebJobs.Host.Listeners.FunctionListenerException : The listener for function 'Functions.processOrder' was unable to start. ---> System.InvalidOperationException : Service Bus account connection string with name 'ServiceBusConnection' does not exist in the settings. Make sure that it is a defined App Setting.
+   at Microsoft.Azure.WebJobs.Extensions.ServiceBus.Config.ServiceBusClientFactory.ResolveConnectionInformation(String connection)
+   at Microsoft.Azure.WebJobs.Extensions.ServiceBus.Config.ServiceBusClientFactory.CreateClientFromSetting(String connection)
+   at Microsoft.Azure.WebJobs.ServiceBus.Listeners.ServiceBusListener.<>c__DisplayClass36_0.<.ctor>b__0()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication,Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.get_Value()
+   at Microsoft.Azure.WebJobs.ServiceBus.Listeners.ServiceBusListener.<>c__DisplayClass36_0.<.ctor>b__2()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.get_Value()
+   at async Microsoft.Azure.WebJobs.ServiceBus.Listeners.ServiceBusListener.StartAsync(CancellationToken cancellationToken)
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at async Microsoft.Azure.WebJobs.Host.Listeners.FunctionListener.StartAsync(??) at /_/src/Microsoft.Azure.WebJobs.Host/Listeners/FunctionListener.cs : 68
+   End of inner exception
+2026-03-12T22:13:18.802 [Information] Retrying to start listener for function 'Functions.processOrder' (Attempt 9)
+2026-03-12T22:13:18.802 [Error] The listener for function 'Functions.processOrder' was unable to start.
+Microsoft.Azure.WebJobs.Host.Listeners.FunctionListenerException : The listener for function 'Functions.processOrder' was unable to start. ---> System.InvalidOperationException : Service Bus account connection string with name 'ServiceBusConnection' does not exist in the settings. Make sure that it is a defined App Setting.
+   at Microsoft.Azure.WebJobs.Extensions.ServiceBus.Config.ServiceBusClientFactory.ResolveConnectionInformation(String connection)
+   at Microsoft.Azure.WebJobs.Extensions.ServiceBus.Config.ServiceBusClientFactory.CreateClientFromSetting(String connection)
+   at Microsoft.Azure.WebJobs.ServiceBus.Listeners.ServiceBusListener.<>c__DisplayClass36_0.<.ctor>b__0()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication,Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.get_Value()
+   at Microsoft.Azure.WebJobs.ServiceBus.Listeners.ServiceBusListener.<>c__DisplayClass36_0.<.ctor>b__2()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.get_Value()
+   at async Microsoft.Azure.WebJobs.ServiceBus.Listeners.ServiceBusListener.StartAsync(CancellationToken cancellationToken)
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at async Microsoft.Azure.WebJobs.Host.Listeners.FunctionListener.StartAsync(??) at /_/src/Microsoft.Azure.WebJobs.Host/Listeners/FunctionListener.cs : 68
+   End of inner exception
+2026-03-12T22:15:08.994 [Information] Executing 'Functions.storeTaskBoardWebhook' (Reason='This function was programmatically called via the host APIs.', Id=50ee5022-a7b1-4de4-a773-6506a6a880f1)
+2026-03-12T22:15:09.109 [Information] Event Grid subscription validation received: 439FC616-8D67-4A92-9EDB-BD9DE9F56742
+2026-03-12T22:15:09.111 [Information] Executed 'Functions.storeTaskBoardWebhook' (Succeeded, Id=50ee5022-a7b1-4de4-a773-6506a6a880f1, Duration=124ms)
+2026-03-12T22:15:18.802 [Information] Retrying to start listener for function 'Functions.processOrder' (Attempt 10)
+2026-03-12T22:15:18.803 [Error] The listener for function 'Functions.processOrder' was unable to start.
+Microsoft.Azure.WebJobs.Host.Listeners.FunctionListenerException : The listener for function 'Functions.processOrder' was unable to start. ---> System.InvalidOperationException : Service Bus account connection string with name 'ServiceBusConnection' does not exist in the settings. Make sure that it is a defined App Setting.
+   at Microsoft.Azure.WebJobs.Extensions.ServiceBus.Config.ServiceBusClientFactory.ResolveConnectionInformation(String connection)
+   at Microsoft.Azure.WebJobs.Extensions.ServiceBus.Config.ServiceBusClientFactory.CreateClientFromSetting(String connection)
+   at Microsoft.Azure.WebJobs.ServiceBus.Listeners.ServiceBusListener.<>c__DisplayClass36_0.<.ctor>b__0()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication,Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.get_Value()
+   at Microsoft.Azure.WebJobs.ServiceBus.Listeners.ServiceBusListener.<>c__DisplayClass36_0.<.ctor>b__2()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.get_Value()
+   at async Microsoft.Azure.WebJobs.ServiceBus.Listeners.ServiceBusListener.StartAsync(CancellationToken cancellationToken)
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at async Microsoft.Azure.WebJobs.Host.Listeners.FunctionListener.StartAsync(??) at /_/src/Microsoft.Azure.WebJobs.Host/Listeners/FunctionListener.cs : 68
+   End of inner exception
+2026-03-12T22:17:18.808 [Information] Retrying to start listener for function 'Functions.processOrder' (Attempt 11)
+2026-03-12T22:17:18.809 [Error] The listener for function 'Functions.processOrder' was unable to start.
+Microsoft.Azure.WebJobs.Host.Listeners.FunctionListenerException : The listener for function 'Functions.processOrder' was unable to start. ---> System.InvalidOperationException : Service Bus account connection string with name 'ServiceBusConnection' does not exist in the settings. Make sure that it is a defined App Setting.
+   at Microsoft.Azure.WebJobs.Extensions.ServiceBus.Config.ServiceBusClientFactory.ResolveConnectionInformation(String connection)
+   at Microsoft.Azure.WebJobs.Extensions.ServiceBus.Config.ServiceBusClientFactory.CreateClientFromSetting(String connection)
+   at Microsoft.Azure.WebJobs.ServiceBus.Listeners.ServiceBusListener.<>c__DisplayClass36_0.<.ctor>b__0()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication,Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.get_Value()
+   at Microsoft.Azure.WebJobs.ServiceBus.Listeners.ServiceBusListener.<>c__DisplayClass36_0.<.ctor>b__2()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.get_Value()
+   at async Microsoft.Azure.WebJobs.ServiceBus.Listeners.ServiceBusListener.StartAsync(CancellationToken cancellationToken)
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at async Microsoft.Azure.WebJobs.Host.Listeners.FunctionListener.StartAsync(??) at /_/src/Microsoft.Azure.WebJobs.Host/Listeners/FunctionListener.cs : 68
+   End of inner exception
+2026-03-12T22:19:18.810 [Information] Retrying to start listener for function 'Functions.processOrder' (Attempt 12)
+2026-03-12T22:19:18.810 [Error] The listener for function 'Functions.processOrder' was unable to start.
+Microsoft.Azure.WebJobs.Host.Listeners.FunctionListenerException : The listener for function 'Functions.processOrder' was unable to start. ---> System.InvalidOperationException : Service Bus account connection string with name 'ServiceBusConnection' does not exist in the settings. Make sure that it is a defined App Setting.
+   at Microsoft.Azure.WebJobs.Extensions.ServiceBus.Config.ServiceBusClientFactory.ResolveConnectionInformation(String connection)
+   at Microsoft.Azure.WebJobs.Extensions.ServiceBus.Config.ServiceBusClientFactory.CreateClientFromSetting(String connection)
+   at Microsoft.Azure.WebJobs.ServiceBus.Listeners.ServiceBusListener.<>c__DisplayClass36_0.<.ctor>b__0()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication,Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.get_Value()
+   at Microsoft.Azure.WebJobs.ServiceBus.Listeners.ServiceBusListener.<>c__DisplayClass36_0.<.ctor>b__2()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.get_Value()
+   at async Microsoft.Azure.WebJobs.ServiceBus.Listeners.ServiceBusListener.StartAsync(CancellationToken cancellationToken)
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at async Microsoft.Azure.WebJobs.Host.Listeners.FunctionListener.StartAsync(??) at /_/src/Microsoft.Azure.WebJobs.Host/Listeners/FunctionListener.cs : 68
+   End of inner exception
+2026-03-12T22:21:18.816 [Information] Retrying to start listener for function 'Functions.processOrder' (Attempt 13)
+2026-03-12T22:21:18.817 [Error] The listener for function 'Functions.processOrder' was unable to start.
+Microsoft.Azure.WebJobs.Host.Listeners.FunctionListenerException : The listener for function 'Functions.processOrder' was unable to start. ---> System.InvalidOperationException : Service Bus account connection string with name 'ServiceBusConnection' does not exist in the settings. Make sure that it is a defined App Setting.
+   at Microsoft.Azure.WebJobs.Extensions.ServiceBus.Config.ServiceBusClientFactory.ResolveConnectionInformation(String connection)
+   at Microsoft.Azure.WebJobs.Extensions.ServiceBus.Config.ServiceBusClientFactory.CreateClientFromSetting(String connection)
+   at Microsoft.Azure.WebJobs.ServiceBus.Listeners.ServiceBusListener.<>c__DisplayClass36_0.<.ctor>b__0()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication,Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.get_Value()
+   at Microsoft.Azure.WebJobs.ServiceBus.Listeners.ServiceBusListener.<>c__DisplayClass36_0.<.ctor>b__2()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.get_Value()
+   at async Microsoft.Azure.WebJobs.ServiceBus.Listeners.ServiceBusListener.StartAsync(CancellationToken cancellationToken)
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at async Microsoft.Azure.WebJobs.Host.Listeners.FunctionListener.StartAsync(??) at /_/src/Microsoft.Azure.WebJobs.Host/Listeners/FunctionListener.cs : 68
+   End of inner exception
