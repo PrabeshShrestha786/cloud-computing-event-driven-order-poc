@@ -104,3 +104,62 @@ The event-driven design provides several advantages:
 - easier integration with additional downstream services
 
 This architecture allows the system to evolve by adding new event consumers without modifying the core order processing pipeline.
+
+## Order Processing Workflow
+
+The final system workflow implemented in Week 3 follows an event-driven pipeline that connects multiple Azure services.
+
+The processing sequence is:
+
+Order Submission → Service Bus Queue → Worker Function → Cosmos DB → Event Grid → Projection Consumer
+
+### Step 1 – Order Submission
+
+A client submits a grocery order through the HTTP API implemented using the `submitOrder` Azure Function.
+
+The API validates the request and ensures required fields are present before forwarding the order message to the Service Bus queue.
+
+### Step 2 – Queue Processing
+
+The order message is placed in the `orders-queue` within Azure Service Bus. This decouples the API from backend processing and allows asynchronous handling of orders.
+
+### Step 3 – Worker Function Execution
+
+The `processOrder` Azure Function is triggered automatically when a message arrives in the queue.
+
+The function performs the following tasks:
+
+- reads the order message
+- validates the order data
+- stores the order document in Cosmos DB
+- publishes an event to Event Grid
+
+### Step 4 – Order Storage
+
+The processed order is stored in the `orders` container in Cosmos DB.
+
+The order document contains key fields such as:
+
+- orderId
+- customer
+- items
+- status
+- processedAt
+
+### Step 5 – Event Publication
+
+After storing the order, the worker function publishes an `OrderProcessed` event to Azure Event Grid.
+
+This event contains the processed order information and store identifier.
+
+### Step 6 – Projection Consumer
+
+The `storeTaskBoardWebhook` Azure Function receives the Event Grid notification and processes the event.
+
+### Step 7 – Store Task Projection
+
+The projection consumer updates the `storeTasks` container in Cosmos DB.
+
+These documents represent operational tasks for store workers preparing customer orders.
+
+This projection allows store applications to efficiently retrieve orders that are ready for picking.
