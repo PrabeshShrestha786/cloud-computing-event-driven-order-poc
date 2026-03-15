@@ -25,32 +25,26 @@ app.http('submitOrder', {
     const customer = order?.customer;
     const items = order?.items;
 
+    const errors = [];
+
     if (!orderId || String(orderId).trim() === "") {
-      return {
-        status: 400,
-        jsonBody: {
-          error: "Validation failed",
-          details: ["orderId is required"]
-        }
-      };
+      errors.push("orderId is required");
     }
 
     if (!customer || String(customer).trim() === "") {
-      return {
-        status: 400,
-        jsonBody: {
-          error: "Validation failed",
-          details: ["customer is required"]
-        }
-      };
+      errors.push("customer is required");
     }
 
     if (!Array.isArray(items) || items.length === 0) {
+      errors.push("items is required and must be a non-empty array");
+    }
+
+    if (errors.length > 0) {
       return {
         status: 400,
         jsonBody: {
           error: "Validation failed",
-          details: ["items is required and must be a non-empty array"]
+          details: errors
         }
       };
     }

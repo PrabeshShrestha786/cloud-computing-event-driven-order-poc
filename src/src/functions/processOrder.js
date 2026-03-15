@@ -15,29 +15,45 @@ app.serviceBusQueue('processOrder', {
   connection: 'ServiceBusConnection',
   queueName: 'orders-queue',
   handler: async (message, context) => {
-    // message.body is what we sent from submitOrder
     const incoming = message?.body ?? message ?? {};
-
-    // Ensure required fields exist
     const orderId = incoming.orderId || incoming.id;
+
     if (!orderId) {
       context.log("Invalid order: missing orderId", incoming);
       return;
     }
 
-    // Cosmos requires "id". Our partition key is "/orderId"
+    const client = new CosmosClient({ endpoint, key });
+    const container = client.database(databaseId).container(containerId);
+
+    const normalizedOrderId = String(orderId);
+
+    // Idempotency check
+    try {
+      const { resource: existingOrder } = await container.item(normalizedOrderId, normalizedOrderId).read();
+
+      if (existingOrder) {
+        context.log(`Duplicate order detected, skipping processing: ${normalizedOrderId}`);
+        return;
+      }
+    } catch (error) {
+      if (error.code !== 404) {
+        context.log("Error checking existing order:", error.message || error);
+        throw error;
+      }
+    }
+
     const orderDoc = {
       ...incoming,
-      id: String(orderId),
-      orderId: String(orderId),
+      id: normalizedOrderId,
+      orderId: normalizedOrderId,
       status: incoming.status || "accepted",
       processedAt: new Date().toISOString()
     };
 
-    const client = new CosmosClient({ endpoint, key });
-    const container = client.database(databaseId).container(containerId);
+    await container.items.create(orderDoc);
 
-    await container.items.upsert(orderDoc);
+    const storeId = incoming.storeId || "store-001";
 
     if (egEndpoint && egKey) {
       const egClient = new EventGridPublisherClient(
@@ -45,8 +61,6 @@ app.serviceBusQueue('processOrder', {
         "EventGrid",
         new AzureKeyCredential(egKey)
       );
-
-      const storeId = incoming.storeId || "store-001";
 
       const event = {
         subject: `/orders/${orderDoc.orderId}`,

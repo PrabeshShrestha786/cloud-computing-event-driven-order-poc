@@ -67,9 +67,10 @@ app.http("storeTaskBoardWebhook", {
 
       // Projection document for "store task board"
       const taskDoc = {
-        id: String(orderId),            // idempotent (same order overwrites)
+        id: String(orderId),
         orderId: String(orderId),
-        storeId: String(storeId),       // partition key
+        storeId: String(storeId),
+        eventType: ev.eventType,
         status: data.status || "accepted",
         taskState: "READY_FOR_PICKING",
         processedAt: data.processedAt || new Date().toISOString(),
